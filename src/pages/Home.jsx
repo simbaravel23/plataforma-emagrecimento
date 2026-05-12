@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../componentes/Header';
 
 export default function Home() {
+  const fases = [1, 2, 3, 4];
+  
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -34,7 +36,7 @@ export default function Home() {
       {/* Seção das Fases (Resumo) */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
-          {.map((fase) => (
+          {fases.map((fase) => (
             <div key={fase} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mb-4">
                 {fase}
