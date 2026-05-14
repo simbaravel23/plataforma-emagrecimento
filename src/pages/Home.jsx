@@ -1,111 +1,124 @@
 import React from 'react';
-import Header from '../componentes/Header';
+import Header from '../components/Header';
+
+const categorias = [
+  { 
+    titulo: "Exercícios Livres", 
+    imagem: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=500", 
+    descricao: "Treinos utilizando apenas o peso do corpo para força e resistência." 
+  },
+  { 
+    titulo: "Alongamento", 
+    imagem: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=500", 
+    descricao: "Melhore sua flexibilidade e postura com rotinas diárias guiadas." 
+  },
+  { 
+    titulo: "Meditação", 
+    imagem: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=500", 
+    descricao: "Foco e relaxamento profundo utilizando frequências Solfeggio." 
+  }
+];
+
+const depoimentos = [
+  { id: 1, aluno: "Ana Silva", resultado: "-12kg", thumb: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=400" },
+  { id: 2, aluno: "Marcos Oliveira", resultado: "-8kg", thumb: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400" },
+  { id: 3, aluno: "Juliana Costa", resultado: "-15kg", thumb: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=400" }
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-[#051933] !text-white selection:bg-white selection:text-black">
       <Header />
       
-      {/* Hero Section - Ajustada para máxima legibilidade */}
-      <section className="relative h-screen flex items-center px-4 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470" 
-            className="w-full h-full object-cover opacity-30"
-            alt="Background"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        </div>
-
-        <div className="max-w-7xl mx-auto w-full z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter text-white">
-              JUST <br />
-              BELIEVE <br />
-              NO <br />
-              <span className="text-white border-t-4 border-b-4 border-white inline-block mt-4 py-2">
-                EXCUSES
-              </span>
+      {/* Hero Section */}
+      <section className="pt-48 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="z-10">
+            <h1 className="text-6xl md:text-7xl font-black leading-tight !text-white uppercase italic drop-shadow-2xl">
+              TRANSFORME <br />
+              <span className="!text-white">SEU CORPO</span> <br />
+              <span className="!text-white">HOJE MESMO.</span>
             </h1>
-            
-            <p className="mt-8 text-white text-lg md:text-2xl max-w-xl font-medium leading-relaxed drop-shadow-lg">
-              O método definitivo de emagrecimento dividido em 4 fases estratégicas para transformar seu corpo e sua mente.
+            <p className="mt-8 !text-white text-xl max-w-lg leading-relaxed font-bold opacity-100">
+              Aprenda a transformar seu corpo com exercícios livres e sua mente através de meditação guiada e alongamento.
             </p>
-            
-            <div className="mt-10 flex flex-wrap gap-6">
-              <button className="bg-white text-black px-12 py-5 rounded-full font-black uppercase text-base hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                Começar Agora
-              </button>
-              <button className="border-2 border-white text-white px-12 py-5 rounded-full font-black uppercase text-base hover:bg-white hover:text-black transition-all">
-                Ver Vídeo
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <input 
+                type="email" 
+                placeholder="Seu e-mail" 
+                className="bg-[#041224] border-2 border-white px-6 py-4 rounded-lg w-full sm:w-80 !text-white placeholder:text-white/60 outline-none"
+              />
+              <button className="bg-white !text-[#051933] hover:bg-gray-200 px-10 py-4 rounded-lg font-black text-sm tracking-wider uppercase transition-all">
+                QUERO COMEÇAR
               </button>
             </div>
+          </div>
+
+          <div className="hidden lg:block relative">
+            <img 
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" 
+              alt="Treino" 
+              className="rounded-2xl border-2 border-white/30 shadow-2xl"
+            />
           </div>
         </div>
       </section>
 
-      {/* Seção Explicativa do Programa (Vídeo + Texto) */}
-      <section className="py-24 px-4 bg-[#0d0d0d] border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">Como funciona o Programa</h2>
-            <div className="w-24 h-2 bg-white mx-auto"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Espaço para o Vídeo de Vendas */}
-            <div className="aspect-video bg-gray-900 rounded-2xl border border-white/20 flex items-center justify-center shadow-2xl overflow-hidden relative group">
-               <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all cursor-pointer">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-black shadow-white/50 shadow-xl transform group-hover:scale-110 transition-transform">
-                    <span className="text-3xl ml-1">▶</span>
-                  </div>
-               </div>
-               <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800" className="w-full h-full object-cover opacity-50" />
-            </div>
-
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white uppercase tracking-widest italic">A ciência por trás do método</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                Nossa metodologia foi desenhada para reprogramar o seu metabolismo. Não é apenas sobre comer menos, é sobre comer certo e treinar com inteligência.
-              </p>
-              <ul className="space-y-4">
-                {['Fase Detox', 'Aceleração', 'Queima Máxima', 'Estilo de Vida'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-white font-bold">
-                    <span className="w-8 h-8 rounded-full border border-white flex items-center justify-center text-sm">{i+1}</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção de Depoimentos */}
-      <section className="py-24 px-4 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-black uppercase mb-16 text-center tracking-tighter">Resultados de nossos alunos</h2>
+      {/* Grid de Módulos */}
+      <section className="py-24 bg-[#041224] border-y border-white/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-sm font-black tracking-[0.4em] !text-white uppercase mb-12 border-b-2 border-white pb-4 inline-block">
+            MÓDULOS DO PROGRAMA
+          </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { nome: "Ana Silva", kg: "-12kg", msg: "O método mudou minha vida. A fase detox foi fundamental!" },
-              { nome: "Marcos Oliveira", kg: "-8kg", msg: "Finalmente um programa que consigo seguir sem passar fome." },
-              { nome: "Juliana Costa", kg: "-15kg", msg: "Os vídeos são objetivos e os áudios me mantêm motivada todos os dias." }
-            ].map((dep, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-white/30 transition-all group">
-                <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, s) => <span key={s}>★</span>)}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {categorias.map((cat, i) => (
+              <div key={i} className="bg-[#051933] rounded-2xl overflow-hidden border-2 border-white/10 hover:border-white transition-all duration-500 group">
+                <div className="h-60 overflow-hidden">
+                  <img src={cat.imagem} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
-                <p className="text-white italic mb-6 text-lg">"{dep.msg}"</p>
-                <div className="flex justify-between items-center border-t border-white/10 pt-4">
-                  <span className="font-bold uppercase tracking-widest text-sm">{dep.nome}</span>
-                  <span className="bg-white text-black px-3 py-1 rounded-full text-xs font-black">{dep.kg}</span>
+                <div className="p-8">
+                  <h3 className="text-2xl font-black mb-4 !text-white uppercase italic italic">
+                    {cat.titulo}
+                  </h3>
+                  <p className="!text-white leading-relaxed font-bold">
+                    {cat.descricao}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Depoimentos */}
+      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-black !text-white uppercase mb-16 italic text-center">Resultados Reais</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {depoimentos.map((video) => (
+            <div key={video.id} className="group">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-white/20 group-hover:border-white transition-all">
+                <img src={video.thumb} className="w-full h-full object-cover opacity-70" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center !text-[#051933]">
+                    <span className="text-2xl ml-1">▶</span>
+                  </div>
+                </div>
+              </div>
+              <h4 className="mt-4 !text-white font-black text-lg uppercase">{video.aluno}</h4>
+              <span className="inline-block bg-white !text-[#051933] px-3 py-1 rounded text-xs font-black mt-2">{video.resultado}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <footer className="py-32 text-center">
+        <h2 className="text-4xl md:text-6xl font-black mb-12 !text-white uppercase italic">Sua nova vida começa aqui</h2>
+        <button className="bg-white !text-[#051933] px-20 py-6 rounded-full font-black text-xl uppercase tracking-tighter hover:scale-105 transition-transform shadow-white/20 shadow-2xl">
+          MATRICULE-SE AGORA
+        </button>
+      </footer>
     </div>
   );
 }
