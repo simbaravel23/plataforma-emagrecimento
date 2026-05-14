@@ -25,27 +25,45 @@ export default function Home() {
       <Header />
       
       {/* Hero Section Centralizada */}
-      <section className="pt-56 pb-20 px-6 max-w-7xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-black leading-tight text-white uppercase italic drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-          TRANSFORME <br />
-          <span className="text-white">SEU CORPO</span> <br />
-          <span className="text-white">HOJE MESMO.</span>
-        </h1>
-        <p className="mt-8 text-white/80 text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-          Aprenda a transformar seu corpo com exercícios livres e sua mente através de meditação guiada e alongamento.
-        </p>
+      <section className="relative">
+        {/* Imagem no Topo */}
+        <div className="w-full h-[100px] md:h-[500px] flex justify-center items-center overflow-hidden relative bg-[#051933]">
+          <img 
+            src="/1000569650.jpg" 
+            alt="Logo Elite" 
+            className="max-w-full max-h-full object-contain"
+            onError={(e) => {
+              e.target.src = "https://via.placeholder.com/400x400/051933/FFFFFF?text=Logo+Nao+Encontrado";
+              console.error("Erro ao carregar a imagem. Verifique se ela está na pasta /public");
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#051933] via-transparent to-transparent"></div>
+        </div>
+        
+        {/* Conteúdo Abaixo da Imagem */}
+        <div className="pt-20 pb-20 px-6 max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-black leading-tight text-white uppercase italic drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+            TRANSFORME <br />
+            <span className="text-white">SEU CORPO</span> <br />
+            <span className="text-white">E SUA MENTE</span> <br />
+            <span className="text-white">HOJE MESMO.</span>
+          </h1>
+          <p className="mt-8 text-white/80 text-lg max-w-2xl mx-auto font-medium leading-relaxed">
+            Aprenda a transformar seu corpo com exercícios livres e sua mente através de meditação guiada e alongamento.
+          </p>
 
-        {/* Captura de E-mail Menor no Canto Direito */}
-        <div className="mt-12 flex justify-center lg:justify-end">
-          <div className="flex bg-[#041224] border border-white/20 p-1 rounded-full shadow-2xl w-full max-w-sm">
-            <input 
-              type="email" 
-              placeholder="Seu melhor e-mail" 
-              className="bg-transparent px-5 py-2 w-full text-white text-sm outline-none placeholder:text-white/40"
-            />
-            <button className="bg-white text-[#051933] px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-tighter hover:bg-gray-200 transition-all whitespace-nowrap">
-              COMEÇAR
-            </button>
+          {/* Captura de E-mail Menor no Canto Direito */}
+          <div className="mt-12 flex justify-center lg:justify-end">
+            <div className="flex bg-[#041224] border border-white/20 p-1 rounded-full shadow-2xl w-full max-w-sm">
+              <input 
+                type="email" 
+                placeholder="Seu melhor e-mail" 
+                className="bg-transparent px-5 py-2 w-full text-white text-sm outline-none placeholder:text-white/40"
+              />
+              <button className="bg-white text-[#051933] px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-tighter hover:bg-gray-200 transition-all whitespace-nowrap">
+                COMEÇAR
+              </button>
+            </div>
           </div>
         </div>
       </section>
