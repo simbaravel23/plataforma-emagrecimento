@@ -11,19 +11,19 @@ export default function Header() {
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center group">
               <span className="text-2xl font-black tracking-tighter text-white group-hover:text-[#167abc] transition-colors">
-                PLATAFORMA<span className="text-[#167abc] group-hover:text-white">FIT</span>
+                PROJETO DE EMAGRECIMENTO <span className="text-[#167abc] border border-[#167abc] px-1 rounded group-hover:text-white group-hover:border-white">REGENERAR</span>
               </span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
-                Cursos
+                Aulas
               </Link>
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Planos
               </Link>
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
-                Para Empresas
+                Dicas
               </Link>
             </nav>
           </div>
@@ -33,7 +33,7 @@ export default function Header() {
             <div className="hidden lg:block relative">
               <input 
                 type="text" 
-                placeholder="O que você quer aprender?" 
+                placeholder="Por onde quer começar ?" 
                 className="bg-[#041224] border border-[#167abc]/50 text-sm text-white px-4 py-2 rounded-md w-64 focus:outline-none focus:border-blue-400"
               />
             </div>
