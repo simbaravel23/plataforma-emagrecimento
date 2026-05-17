@@ -3,16 +3,25 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import mercadopago from 'mercadopago';
+import { MercadoPagoConfig, Preference } from 'mercadopago';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN || 'SEU_TOKEN_DE_TESTE_MERCADOPAGO');
+const mercadopagoClient = new MercadoPagoConfig({
+  accessToken: process.env.MP_ACCESS_TOKEN || 'SEU_TOKEN_DE_TESTE_MERCADOPAGO',
+  options: { timeout: 5000 }
+});
+const preferenceApi = new Preference(mercadopagoClient);
 
-// Substitua pela sua string de conexão do MongoDB
-const MONGO_URI = "mongodb://localhost:27017/plataforma_fit";
+// String de conexão do MongoDB (local ou Atlas)
+// Para Atlas, use: mongodb+srv://usuario:senha@cluster.mongodb.net/plataforma_fit
+// Para local, use: mongodb://localhost:27017/plataforma_fit
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/plataforma_fit";
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log("Conectado ao MongoDB com sucesso!"))
@@ -23,7 +32,11 @@ const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, default: 'aluno' } // Útil para sua gestão de instrutores
+  role: { type: String, default: 'aluno' },
+  isPaid: { type: Boolean, default: false },
+  paidAt: { type: Date, default: null },
+  preferenceId: { type: String, default: null },
+  createdAt: { type: Date, default: Date.now }
 });
 
 const User = mongoose.model('User', UserSchema);
@@ -77,11 +90,32 @@ app.post('/api/create_preference', async (req, res) => {
       auto_return: 'approved',
     };
 
-    const response = await mercadopago.preferences.create(preference);
+    const response = await preferenceApi.create({ body: preference });
     res.json({ init_point: response.body.init_point, sandbox_init_point: response.body.sandbox_init_point });
   } catch (error) {
     console.error('Erro Mercado Pago:', error);
     res.status(500).send({ error: 'Erro ao criar preferência de pagamento.' });
+  }
+});
+
+// Rota para confirmar pagamento e atualizar usuário
+app.post('/api/confirm_payment', async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOneAndUpdate(
+      { email },
+      { isPaid: true, paidAt: new Date() },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.status(404).send({ error: 'Usuário não encontrado.' });
+    }
+
+    res.json({ message: 'Pagamento confirmado!', user });
+  } catch (error) {
+    console.error('Erro ao confirmar pagamento:', error);
+    res.status(500).send({ error: 'Erro ao confirmar pagamento.' });
   }
 });
 

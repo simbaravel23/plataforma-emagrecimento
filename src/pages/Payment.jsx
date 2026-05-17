@@ -24,6 +24,18 @@ export default function Payment() {
     const status = searchParams.get('status');
     if (status === 'success') {
       setPaid(true);
+      
+      if (pendingUser?.email) {
+        fetch('http://localhost:5000/api/confirm_payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: pendingUser.email })
+        })
+          .then(res => res.json())
+          .then(data => console.log('Pagamento confirmado no banco:', data))
+          .catch(err => console.error('Erro ao confirmar pagamento:', err));
+      }
+
       setMessage('Pagamento aprovado! Sua matrícula foi finalizada. Redirecionando para o login...');
       localStorage.removeItem('pendingRegistration');
 
@@ -37,7 +49,7 @@ export default function Payment() {
     if (status === 'failure') {
       setMessage('Pagamento não concluído. Tente novamente ou entre em contato com o suporte.');
     }
-  }, [searchParams, navigate]);
+  }, [searchParams, navigate, pendingUser]);
 
   async function handlePayment() {
     if (!pendingUser) return;
