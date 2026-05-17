@@ -10,10 +10,14 @@ export default function Header() {
           {/* Lado Esquerdo: Logo e Links Principais */}
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center group">
-              <span className="text-2xl font-black tracking-tighter text-white group-hover:text-[#167abc] transition-colors">
-                PROJETO DE EMAGRECIMENTO <span className="text-[#167abc] border border-[#167abc] px-1 rounded group-hover:text-white group-hover:border-white">REGENERAR</span>
-              </span>
-            </Link>
+    {/* Mudamos para text-lg no mobile e text-2xl no desktop (md:) */}
+    <span className="text-lg md:text-2xl font-black tracking-tighter text-white group-hover:text-[#167abc] transition-colors flex flex-wrap items-center gap-x-2 gap-y-1">
+      PROJETO DE EMAGRECIMENTO{" "}
+      <span className="text-[#167abc] border border-[#167abc] px-1 rounded group-hover:text-white group-hover:border-white inline-block">
+        REGENERAR
+      </span>
+    </span>
+  </Link>
 
             <nav className="hidden md:flex items-center gap-6">
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
@@ -38,19 +42,21 @@ export default function Header() {
               />
             </div>
             
-            <Link 
-              to="/auth?mode=login" 
-              className="text-white text-sm font-bold border-b-2 border-transparent hover:border-[#167abc] pb-1 transition-all"
-            >
-              Entrar
-            </Link>
-            
-            <Link 
-              to="/auth?mode=register" 
-              className="bg-[#167abc] text-white px-6 py-2 rounded-md text-sm font-black uppercase hover:bg-[#1a8cd8] transition shadow-lg shadow-blue-900/20"
-            >
-              Matricule-se
-            </Link>
+       <div className="flex items-center gap-2 sm:gap-4"> {/* Container para controlar o espaçamento entre eles */}
+  <Link 
+    to="/auth?mode=login" 
+    className="text-white text-xs sm:text-sm font-bold border-b-2 border-transparent hover:border-[#167abc] pb-1 transition-all"
+  >
+    Entrar
+  </Link>
+  
+  <Link 
+    to="/auth?mode=register" 
+    className="bg-[#167abc] text-white px-3 py-1.5 sm:px-6 sm:py-2 rounded-md text-xs sm:text-sm font-black uppercase hover:bg-[#1a8cd8] transition shadow-lg shadow-blue-900/20 whitespace-nowrap"
+  >
+    Matricule-se
+  </Link>
+</div>
           </div>
 
         </div>
