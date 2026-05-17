@@ -165,4 +165,23 @@ app.post('/api/confirm_payment', async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Servidor rodando na porta 5000"));
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Configuração necessária para pegar o caminho correto dos arquivos usando ES Modules (import)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// 1. Serve os arquivos estáticos do frontend (pasta dist que o npm run build gera)
+// Como o seu index.jsx está dentro de src/services/, precisamos voltar duas pastas (../../dist)
+app.use(express.static(path.join(__dirname, '../../dist')));
+
+// 2. Qualquer rota que NÃO comece com /api vai carregar o HTML do seu frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
+});
+
+// O Render define a porta automaticamente na variável process.env.PORT. 
+// Se ela não existir (como no seu computador local), ele usa a 5000.
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
