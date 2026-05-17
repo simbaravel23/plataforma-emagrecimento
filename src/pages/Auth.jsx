@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
 export default function Auth() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   // Estado para alternar entre Login e Cadastro
   const [isLogin, setIsLogin] = useState(true);
@@ -41,8 +42,11 @@ export default function Auth() {
           localStorage.setItem('userName', data.name);
           window.location.href = '/dashboard'; 
         } else {
-          alert("Cadastro realizado com sucesso! Faça seu login.");
-          setIsLogin(true);
+          localStorage.setItem(
+            'pendingRegistration',
+            JSON.stringify({ name: formData.name, email: formData.email })
+          );
+          navigate('/payment');
         }
       } else {
         alert(data.error || data.message || "Erro na operação.");
