@@ -16,11 +16,6 @@ app.use((req, res, next) => {
   try { console.log('REQ', req.method, req.path, JSON.stringify(req.body)); } catch(e) { console.log('REQ', req.method, req.path); }
   next();
 });
-// Log every incoming request for debugging
-app.use((req, res, next) => {
-  try { console.log('REQ', req.method, req.path, JSON.stringify(req.body)); } catch(e) { console.log('REQ', req.method, req.path); }
-  next();
-});
 
 const mercadopagoClient = new MercadoPagoConfig({
   accessToken: process.env.MP_ACCESS_TOKEN || 'SEU_TOKEN_DE_TESTE_MERCADOPAGO',
@@ -177,7 +172,10 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 // 2. Qualquer rota que NÃO comece com /api vai carregar o HTML do seu frontend
-app.get('*', (req, res) => {
+app.use((req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'Endpoint não encontrado.' });
+  }
   res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
 });
 
