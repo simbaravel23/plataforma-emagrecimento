@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 
 export default function Auth() {
+  const [searchParams] = useSearchParams();
+
   // Estado para alternar entre Login e Cadastro
   const [isLogin, setIsLogin] = useState(true);
   
@@ -11,6 +14,11 @@ export default function Auth() {
     email: '',
     password: ''
   });
+
+  useEffect(() => {
+    const mode = searchParams.get('mode');
+    setIsLogin(mode !== 'register');
+  }, [searchParams]);
 
   // Função para lidar com o envio dos dados para o MongoDB via API
   const handleSubmit = async (e) => {

@@ -41,7 +41,7 @@ export default function Home() {
         </div>
         
         {/* Conteúdo Abaixo da Imagem */}
-        <div className="pt-20 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div className="pt-5 pb-20 px-6 max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-black leading-tight text-white uppercase italic drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
             TRANSFORME <br />
             <span className="text-white">SEU CORPO</span> <br />

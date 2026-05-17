@@ -39,14 +39,14 @@ export default function Header() {
             </div>
             
             <Link 
-              to="/login" 
+              to="/auth?mode=login" 
               className="text-white text-sm font-bold border-b-2 border-transparent hover:border-[#167abc] pb-1 transition-all"
             >
               Entrar
             </Link>
             
             <Link 
-              to="/matricula" 
+              to="/auth?mode=register" 
               className="bg-[#167abc] text-white px-6 py-2 rounded-md text-sm font-black uppercase hover:bg-[#1a8cd8] transition shadow-lg shadow-blue-900/20"
             >
               Matricule-se
