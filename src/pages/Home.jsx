@@ -185,7 +185,7 @@ export default function Home() {
       {/* Footer Simples */}
       <footer className="py-12 border-t border-white/5 text-center">
         <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.5em]">
-          Plataforma de Treinamento Elite
+          Plataforma de Treinamento Regenerar
         </p>
       </footer>
     </div>
