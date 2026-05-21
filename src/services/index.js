@@ -49,16 +49,36 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema);
 
-// Rota de Cadastro
+// Rota de Cadastro Corrigida
 app.post('/api/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
+    
+    // Validando se os campos chegaram do frontend
+    if (!name || !email || !password) {
+      return res.status(400).json({ error: "Todos os campos (nome, e-mail e senha) são obrigatórios." });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
-    res.status(201).send({ message: "Usuário criado com sucesso!" });
+    
+    // Retornando em formato JSON para manter o padrão
+    return res.status(201).json({ message: "Usuário criado com sucesso!" });
   } catch (error) {
-    res.status(400).send({ error: "Erro ao cadastrar. E-mail já existe." });
+    // Mostra o erro real no terminal do VS Code ou logs do Render
+    console.error("Erro real no cadastro:", error);
+
+    // Se o erro for código 11000, aí sim é e-mail duplicado no MongoDB
+    if (error.code === 11000) {
+      return res.status(400).json({ error: "Erro ao cadastrar. E-mail já existe." });
+    }
+
+    // Se for qualquer outro erro, ele te avisa o que foi
+    return res.status(500).json({ 
+      error: "Erro interno no servidor ao salvar usuário.", 
+      details: error.message 
+    });
   }
 });
 
