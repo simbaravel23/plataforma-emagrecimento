@@ -27,7 +27,7 @@ export default function Auth() {
     const endpoint = isLogin ? 'login' : 'register';
     
     try {
-      const response = await fetch(`http://localhost:5000/api/${endpoint}`, {
+      const response = await fetch(`/api/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -53,7 +53,7 @@ export default function Auth() {
       }
     } catch (err) {
       console.error("Erro ao conectar com o servidor Node/Mongo:", err);
-      alert("Certifique-se de que o servidor backend está rodando na porta 5000.");
+      alert("Erro ao conectar com o servidor backend. Verifique se o servidor está ativo e as variáveis de ambiente.");
     }
   };
 

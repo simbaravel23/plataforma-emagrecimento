@@ -26,7 +26,7 @@ export default function Payment() {
       setPaid(true);
       
       if (pendingUser?.email) {
-        fetch('http://localhost:5000/api/confirm_payment', {
+        fetch('/api/confirm_payment', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: pendingUser.email })
@@ -58,7 +58,7 @@ export default function Payment() {
     setMessage('Redirecionando para o Mercado Pago...');
 
     try {
-      const response = await fetch('http://localhost:5000/api/create_preference', {
+      const response = await fetch('/api/create_preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
