@@ -5,7 +5,8 @@ services:
     name: plataforma-emagrecimento
     env: node
     plan: free
-    buildCommand: npm run build
+    # Ensure devDependencies (like Vite) are installed before building
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
     # Optional: set the branch to deploy (default: main/master)
     branch: main
