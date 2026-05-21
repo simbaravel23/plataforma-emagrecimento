@@ -1,0 +1,20 @@
+# Minimal Render configuration for a single Node web service
+# Update env var values in the Render dashboard after connecting your repo.
+services:
+  - type: web
+    name: plataforma-emagrecimento
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    # Optional: set the branch to deploy (default: main/master)
+    branch: main
+    envVars:
+      - key: MONGO_URI
+        value: ""
+      - key: MP_ACCESS_TOKEN
+        value: ""
+      - key: JWT_SECRET
+        value: ""
+      - key: NODE_ENV
+        value: production
