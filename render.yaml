@@ -20,7 +20,5 @@ services:
         value: ""
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: "5000"
     # If your repo root is not the project root, set the path here (example: frontend)
     # rootDir: .

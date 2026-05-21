@@ -17,6 +17,12 @@ app.use((req, res, next) => {
   next();
 });
 
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/plataforma_fit";
+if (!process.env.MONGO_URI) {
+  console.warn('MONGO_URI não fornecido. Em Render, defina a variável de ambiente MONGO_URI com a sua string do Mongo Atlas.');
+}
+const JWT_SECRET = process.env.JWT_SECRET || 'SUA_CHAVE_SECRETA';
+
 const mercadopagoClient = new MercadoPagoConfig({
   accessToken: process.env.MP_ACCESS_TOKEN || 'SEU_TOKEN_DE_TESTE_MERCADOPAGO',
   options: { timeout: 5000 }
@@ -24,10 +30,6 @@ const mercadopagoClient = new MercadoPagoConfig({
 const client = new MercadoPagoConfig({ 
   accessToken: process.env.MP_ACCESS_TOKEN || 'SEU_TOKEN_DE_TESTE_MERCADOPAGO' 
 });
-// String de conexão do MongoDB (local ou Atlas)
-// Para Atlas, use: mongodb+srv://usuario:senha@cluster.mongodb.net/plataforma_fit
-// Para local, use: mongodb://localhost:27017/plataforma_fit
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/plataforma_fit";
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log("Conectado ao MongoDB com sucesso!"))
@@ -61,14 +63,18 @@ app.post('/api/register', async (req, res) => {
 });
 
 // Rota de Login
-app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (user && await bcrypt.compare(password, user.password)) {
-    const token = jwt.sign({ id: user._id }, 'SUA_CHAVE_SECRETA', { expiresIn: '1d' });
-    res.json({ auth: true, token, name: user.name });
-  } else {
-    res.status(401).send({ auth: false, message: "Dados inválidos." });
+app.post('/api/login', async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (user && await bcrypt.compare(password, user.password)) {
+      const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1d' });
+      res.json({ auth: true, token, name: user.name });
+    } else {
+      res.status(401).send({ auth: false, message: "Dados inválidos." });
+    }
+  } catch (error) {
+    next(error);
   }
 });
 
@@ -140,7 +146,7 @@ app.post('/api/create_preference', async (req, res) => {
 });
 
 // Rota para confirmar pagamento e atualizar usuário
-app.post('/api/confirm_payment', async (req, res) => {
+app.post('/api/confirm_payment', async (req, res, next) => {
   try {
     const { email } = req.body;
     const user = await User.findOneAndUpdate(
@@ -156,8 +162,14 @@ app.post('/api/confirm_payment', async (req, res) => {
     res.json({ message: 'Pagamento confirmado!', user });
   } catch (error) {
     console.error('Erro ao confirmar pagamento:', error);
-    res.status(500).send({ error: 'Erro ao confirmar pagamento.' });
+    next(error);
   }
+});
+
+// Error handler middleware to ensure JSON responses on server errors
+app.use((err, req, res, next) => {
+  console.error('Unhandled server error:', err);
+  res.status(500).json({ error: 'Internal server error', message: err.message || 'Erro interno' });
 });
 
 import path from 'path';
