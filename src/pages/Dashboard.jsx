@@ -4,12 +4,15 @@ import Header from '../components/Header';
 const modulos = [
   {
     id: 1,
-    titulo: 'Módulo 1 • Fundamentos',
+    titulo: 'Módulo 1 • Estado inicial',
     descricao: 'Primeiros passos e rotina de aquecimento.',
     aulas: [
       { id: 1, titulo: 'Boas-vindas ao programa', tipo: 'Introdução', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Conheça a estrutura do programa e como tirar o máximo proveito das aulas.' },
-      { id: 2, titulo: 'Alongamento inicial', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Rotina leve para preparar o corpo antes dos treinos mais intensos.' },
-      { id: 3, titulo: 'Hidratação e respiração', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Aprenda a melhor forma de respirar e se manter hidratado durante as sessões.' },
+      { id: 2, titulo: 'Alongamento inicial', tipo: 'Alongamento', videoUrl: 'https://drive.google.com/file/d/1wUzq4fB4PYmijBdxOJuQFJDjW6SbF4B3/view?usp=sharing', texto: 'Rotina leve para preparar o corpo antes dos treinos mais intensos.' },
+      { id: 3, titulo: 'Exercicios 1', tipo: 'Bem-estar', videoUrl: 'https://drive.google.com/file/d/1JH50Ctj-u2Gl1xG0YWLO7xIKz3x1DWKb/view?usp=sharing', texto: 'Aprenda a melhor forma de respirar e se manter hidratado durante as sessões.' },
+      { id: 4, titulo: 'Exercicios 1 adaptado', tipo: 'Bem-estar', videoUrl: 'https://drive.google.com/file/d/1wOTQIoxInCCgUNZm-peJN_FbstAvmVX2/view?usp=sharing', texto: 'Aprenda a melhor forma de respirar e se manter hidratado durante as sessões.' },
+      { id: 5, titulo: 'Exercicios socos', tipo: 'Bem-estar', videoUrl: 'https://drive.google.com/file/d/1cVA20ORPhPDE5KOKc-xr1UXS3YW7u-A1/view?usp=sharing', texto: 'Aprenda a melhor forma de respirar e se manter hidratado durante as sessões.' },
+      { id: 6, titulo: 'Exercicios socos no aparelho', tipo: 'Bem-estar', videoUrl: 'https://drive.google.com/file/d/1k0NK4T1ugPR0RwlHIf64YSZ8iNWeqADX/view?usp=sharing', texto: 'Aprenda a melhor forma de respirar e se manter hidratado durante as sessões.' },
     ],
   },
   {
