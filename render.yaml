@@ -5,8 +5,9 @@ services:
     name: plataforma-emagrecimento
     env: node
     plan: free
-    # Ensure devDependencies (like Vite) are installed before building
-    buildCommand: npm install --include=dev && npm run build
+    # Use npm ci for reproducible installs and include devDependencies so Vite is available
+    buildCommand: npm ci --include=dev && npm run build
+    # Start the Node server which serves the built frontend
     startCommand: npm start
     # Optional: set the branch to deploy (default: main/master)
     branch: main
@@ -19,3 +20,7 @@ services:
         value: ""
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: "5000"
+    # If your repo root is not the project root, set the path here (example: frontend)
+    # rootDir: .
