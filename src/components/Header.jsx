@@ -12,7 +12,7 @@ export default function Header() {
             <Link to="/" className="flex items-center group">
     {/* Mudamos para text-lg no mobile e text-2xl no desktop (md:) */}
     <span className="text-lg md:text-2xl font-black tracking-tighter text-white group-hover:text-[#167abc] transition-colors flex flex-wrap items-center gap-x-2 gap-y-1">
-      PROJETO DE EMAGRECIMENTO{" "}
+      MÉTODO DE EMAGRECIMENTO{" "}
       <span className="text-[#167abc] border border-[#167abc] px-1 rounded group-hover:text-white group-hover:border-white inline-block">
         REGENERAR
       </span>
