@@ -1,0 +1,24 @@
+# Minimal Render configuration for a single Node web service
+# Update env var values in the Render dashboard after connecting your repo.
+services:
+  - type: web
+    name: plataforma-emagrecimento
+    env: node
+    plan: free
+    # Use npm ci for reproducible installs and include devDependencies so Vite is available
+    buildCommand: npm ci --include=dev && npm run build
+    # Start the Node server which serves the built frontend
+    startCommand: npm start
+    # Optional: set the branch to deploy (default: main/master)
+    branch: main
+    envVars:
+      - key: MONGO_URI
+        value: ""
+      - key: MP_ACCESS_TOKEN
+        value: ""
+      - key: JWT_SECRET
+        value: ""
+      - key: NODE_ENV
+        value: production
+    # If your repo root is not the project root, set the path here (example: frontend)
+    # rootDir: .
