@@ -131,7 +131,7 @@ export default function Dashboard() {
                         <div className="mt-4 pt-3 border-t border-white/10 text-center">
                           <p className="text-[11px] text-white/50 uppercase tracking-wider mb-2">Tire suas dúvidas aqui</p>
                           <a
-                            href={`https://wa.me/5515997987980?text=Ol%C3%A1%21+Estou+com+uma+d%C3%BAvida+no+${encodeURIComponent(modulo.titulo)}`}
+                            href={`https://wa.me/5515996987980?text=Ol%C3%A1%21+Estou+com+uma+d%C3%BAvida+no+${encodeURIComponent(modulo.titulo)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 w-full rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 font-bold text-xs uppercase tracking-wider transition-colors shadow-lg shadow-[#25D366]/10"
