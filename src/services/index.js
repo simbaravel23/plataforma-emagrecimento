@@ -5,12 +5,15 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 // Log every incoming request for debugging
 app.use((req, res, next) => {
   try { console.log('REQ', req.method, req.path, JSON.stringify(req.body)); } catch(e) { console.log('REQ', req.method, req.path); }
@@ -54,7 +57,6 @@ app.post('/api/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
     
-    // Validando se os campos chegaram do frontend
     if (!name || !email || !password) {
       return res.status(400).json({ error: "Todos os campos (nome, e-mail e senha) são obrigatórios." });
     }
@@ -63,18 +65,14 @@ app.post('/api/register', async (req, res) => {
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
     
-    // Retornando em formato JSON para manter o padrão
     return res.status(201).json({ message: "Usuário criado com sucesso!" });
   } catch (error) {
-    // Mostra o erro real no terminal do VS Code ou logs do Render
     console.error("Erro real no cadastro:", error);
 
-    // Se o erro for código 11000, aí sim é e-mail duplicado no MongoDB
     if (error.code === 11000) {
       return res.status(400).json({ error: "Erro ao cadastrar. E-mail já existe." });
     }
 
-    // Se for qualquer outro erro, ele te avisa o que foi
     return res.status(500).json({ 
       error: "Erro interno no servidor ao salvar usuário.", 
       details: error.message 
@@ -98,29 +96,31 @@ app.post('/api/login', async (req, res, next) => {
   }
 });
 
-// Rota de pagamento Mercado Pago
-// Procure por essa rota no seu index.js e ajuste o final do bloco try:
+// Rota de pagamento Mercado Pago ALTERADA
 app.post('/api/create_preference', async (req, res) => {
   console.log('/api/create_preference called with body:', JSON.stringify(req.body));
   try { require('fs').appendFileSync('/tmp/mp-debug.log', `\n=== ${new Date().toISOString()} REQUEST: ${JSON.stringify(req.body)}\n`); } catch(e) { /* ignore */ }
+  
   try {
-    const { email, name, success_url, failure_url } = req.body;
+    // Capturando os novos campos dinâmicos do plano vindos do front
+    const { email, name, planTitle, planPrice, success_url, failure_url } = req.body;
+    
     const backUrls = {
       success: success_url || 'http://localhost:5173/payment?status=success',
       failure: failure_url || 'http://localhost:5173/payment?status=failure',
     };
 
-    // Only set auto_return when success URL is HTTPS (avoids invalid_auto_return for localhost)
     const autoReturn = (backUrls.success && backUrls.success.startsWith('https')) ? 'approved' : undefined;
 
+    // Montando a preferência com os dados recebidos ou fallbacks padrão de segurança
     const preferenceData = {
       body: {
         items: [
           {
-            title: 'Matrícula Plataforma Fit',
+            title: planTitle || 'Matrícula Plataforma Fit', // Nome do plano dinâmico
             quantity: 1,
             currency_id: 'BRL',
-            unit_price: 99.9,
+            unit_price: Number(planPrice) || 99.9, // Valor dinâmico convertido para número
           },
         ],
         payer: {
@@ -132,7 +132,6 @@ app.post('/api/create_preference', async (req, res) => {
       }
     };
 
-    // Use REST API directly to create preference (avoids SDK inconsistencies)
     console.log('Creating Mercado Pago preference via REST with body:', JSON.stringify(preferenceData.body));
     const mpResp = await fetch('https://api.mercadopago.com/checkout/preferences', {
       method: 'POST',
@@ -186,24 +185,20 @@ app.post('/api/confirm_payment', async (req, res, next) => {
   }
 });
 
-// Error handler middleware to ensure JSON responses on server errors
+// Error handler middleware
 app.use((err, req, res, next) => {
   console.error('Unhandled server error:', err);
   res.status(500).json({ error: 'Internal server error', message: err.message || 'Erro interno' });
 });
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-// Configuração necessária para pegar o caminho correto dos arquivos usando ES Modules (import)
+// Configuração para ES Modules (import)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 1. Serve os arquivos estáticos do frontend (pasta dist que o npm run build gera)
-// Como o seu index.jsx está dentro de src/services/, precisamos voltar duas pastas (../../dist)
+// Serve os arquivos estáticos do frontend
 app.use(express.static(path.join(__dirname, '../../dist')));
 
-// 2. Qualquer rota que NÃO comece com /api vai carregar o HTML do seu frontend
+// Qualquer rota que NÃO comece com /api vai carregar o HTML do seu frontend
 app.use((req, res) => {
   if (req.path.startsWith('/api')) {
     return res.status(404).json({ error: 'Endpoint não encontrado.' });
@@ -211,7 +206,5 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
 });
 
-// O Render define a porta automaticamente na variável process.env.PORT. 
-// Se ela não existir (como no seu computador local), ele usa a 5000.
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
