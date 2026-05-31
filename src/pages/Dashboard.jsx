@@ -47,7 +47,7 @@ const modulos = [
         id: 6, 
         titulo: 'Exercícios de Socos no Ar', 
         tipo: 'Bem-estar', 
-        videoUrl: 'https://youtu.be/ONzgHRuVzX4?si=YxwF5S2GzUo3Se9K', 
+        videoUrl: 'https://www.youtube.com/embed/ONzgHRuVzX4?si=xTZUnzFUFLs2UOFK', 
         texto: 'Treino de cardio com socos.' 
       },
     ],
