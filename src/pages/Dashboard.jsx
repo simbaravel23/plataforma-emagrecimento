@@ -133,6 +133,25 @@ export default function Dashboard() {
                           <p className="font-semibold text-sm leading-snug">{aula.titulo}</p>
                         </button>
                       ))}
+
+                      {/* NOVO CAMPO: Tire suas dúvidas aqui (Aparece ao abrir o módulo) */}
+                      {aberto && (
+                        <div className="mt-4 pt-3 border-t border-white/10 text-center">
+                          <p className="text-[11px] text-white/50 uppercase tracking-wider mb-2">Tire suas dúvidas aqui</p>
+                          <a
+                            href={`https://wa.me/5515996987980?text=Ol%C3%A1%21+Estou+com+uma+d%C3%BAvida+no+${encodeURIComponent(modulo.titulo)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 w-full rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 font-bold text-xs uppercase tracking-wider transition-colors shadow-lg shadow-[#25D366]/10"
+                          >
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.64-1.019-5.123-2.877-6.981-1.857-1.857-4.342-2.878-6.979-2.879-5.449 0-9.886 4.434-9.889 9.885-.001 2.221.612 4.356 1.748 5.972l-.101.515-.675 2.472 2.528-.664.514-.108zM17.43 14.83c-.308-.154-1.82-.9-2.102-1.003-.281-.102-.486-.154-.69.154-.204.308-.791.993-.97 1.199-.179.205-.359.229-.667.075-.307-.153-1.298-.478-2.472-1.526-.913-.815-1.53-1.821-1.71-2.129-.18-.308-.019-.475.135-.629.139-.138.308-.359.461-.539.154-.179.206-.308.308-.513.102-.206.051-.385-.026-.54-.077-.154-.692-1.668-.949-2.284-.25-.601-.504-.52-.69-.53l-.588-.01c-.205 0-.539.077-.821.385-.281.308-1.077 1.051-1.077 2.564 0 1.513 1.102 2.975 1.256 3.181.154.205 2.169 3.311 5.256 4.643.734.316 1.307.505 1.754.647.737.234 1.407.201 1.937.122.59-.088 1.82-.744 2.077-1.462.256-.718.256-1.334.179-1.462-.077-.128-.282-.205-.59-.359z" />
+                            </svg>
+                            Chamar no WhatsApp
+                          </a>
+                        </div>
+                      )}
+
                     </div>
                   </div>
                 </div>
@@ -158,7 +177,6 @@ export default function Dashboard() {
 
             <div className="grid gap-8">
               <div className="relative aspect-video bg-black rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-                {/* Aqui está o Iframe corrigido com parâmetros de segurança para o Render */}
                 <iframe
                   className="w-full h-full"
                   src={`${aulaAtiva.videoUrl}?modestbranding=1&rel=0&showinfo=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
