@@ -35,12 +35,20 @@ const modulos = [
         videoUrl: 'https://www.youtube.com/embed/QhS_RKCh03g', 
         texto: 'Versão adaptada do exercício para ganho de estabilidade e força controlada.' 
       },
+      
       { 
         id: 5, 
         titulo: 'Exercícios de Socos no Aparelho', 
         tipo: 'Bem-estar', 
         videoUrl: 'https://www.youtube.com/embed/bU3ArMzuJIU', 
         texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' 
+      },
+      { 
+        id: 6, 
+        titulo: 'Exercícios de Socos no Ar', 
+        tipo: 'Bem-estar', 
+        videoUrl: 'https://youtu.be/ONzgHRuVzX4?si=YxwF5S2GzUo3Se9K', 
+        texto: 'Treino de cardio com socos.' 
       },
     ],
   },
