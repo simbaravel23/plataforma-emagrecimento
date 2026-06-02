@@ -23,7 +23,7 @@ export default function Header() {
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Aulas
               </Link>
-              <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
+              <Link to="/payment" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Planos
               </Link>
               <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
