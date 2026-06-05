@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../components/Header';
 
 const modulos = [
@@ -226,3 +226,14 @@ export default function Dashboard() {
                     <strong className="text-white">Dica:</strong> Assista ao vídeo com atenção e repita os movimentos no ritmo do instrutor.
                   </li>
                   <li className="rounded-2xl bg-white/5 p-4 border border-white/5">
+                    <strong className="text-white">Prática:</strong> Reserve um tempo após a aula para revisar os pontos-chave e manter a constância diária.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
