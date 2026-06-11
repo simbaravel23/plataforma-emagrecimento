@@ -65,6 +65,17 @@ export default function Home() {
               </button>
             </div>
           </div>
+          {/* Botão para comprar o livro */}
+          <div className="mt-6">
+            <a
+              href="https://regenerar-livro.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-black uppercase hover:bg-white/10 transition"
+            >
+              Comprar o Livro
+            </a>
+          </div>
         </div>
       </section>
 
