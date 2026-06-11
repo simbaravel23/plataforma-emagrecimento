@@ -37,6 +37,20 @@ export default function Home() {
               console.error("Erro ao carregar a imagem. Verifique se ela está na pasta /public");
             }}
           />
+          {/* Link de compra com miniatura do livro ao lado da imagem (visível a partir de md) */}
+          <a
+            href="https://regenerar-livro.onrender.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center gap-3 bg-[#041224]/70 border border-white/10 px-3 py-2 rounded-2xl hover:scale-105 transition"
+          >
+            <img
+              src="/1000569650.jpg"
+              alt="Miniatura do Livro"
+              className="w-20 h-28 object-cover rounded"
+            />
+            <span className="text-sm font-black uppercase text-white">Comprar o Livro</span>
+          </a>
           <div className="absolute inset-0 bg-gradient-to-t from-[#051933] via-transparent to-transparent"></div>
         </div>
         
