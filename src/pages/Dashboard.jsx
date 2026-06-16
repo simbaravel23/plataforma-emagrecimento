@@ -18,8 +18,8 @@ const modulos = [
       { id: 2, titulo: 'Alongamento com Treino Mental', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Rotina leve para preparar o corpo e a mente antes dos treinos mais intensos.' },
       { id: 3, titulo: 'Flexão e Prancha sem Apoio', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/YwCf0E9HvzQ', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
       { id: 4, titulo: 'Flexão de Braço com Apoio e Prancha', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/QhS_RKCh03g', texto: 'Versão adaptada do exercício para ganho de estabilidade e força controlada.' },
-      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/2YGAkWZaNrI?si=1zzsvyk0OtUG5gVX', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
-      { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/KdClCJVFNOc?si=Vs1boCzu3FAdQqkp', texto: 'Treino de cardio com socos.' },
+      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/2YGAkWZaNrI?si=u_Y0JZAT2Mj7C4Yu', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
+      { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/KdClCJVFNOc', texto: 'Treino de cardio com socos.' },
     ],
   },
   {
@@ -34,8 +34,8 @@ const modulos = [
       treinoMental: 'Uso obrigatório de fones de ouvido: Utilizar geradores de tom puro online ou aplicativos para ouvir as frequências de 432 Hz (equilíbrio), 741 Hz (limpeza mental) e a combinação binaural regenerativa de 528 Hz no ouvido esquerdo e 522 Hz no ouvido direito (diferencial de 6 Hz - Ondas Theta) durante o alongamento ou jejum matinal.'
     },
     aulas: [
-      { id: 7, titulo: 'Treino para membros inferiores', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Foco em pernas, glúteos e postura para fortalecer a base do corpo.' },
-      { id: 8, titulo: 'Core e estabilidade', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Sequência para abdômen e lombar com exercícios acessíveis.' },
+      { id: 7, titulo: 'Explicacao fase 2', tipo: 'Exercícios', videoUrl: 'https://www.youtube-nocookie.com/embed/4kLX6DLsTrg?si=G9wDONHdzvveI_4N', texto: 'Orientacoes sobre as mudancas na fase 2.' },
+      { id: 8, titulo: 'Exercicios adicionais com pesos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/7OmUIRnACZU?si=xWkpq--uDXqtSOez', texto: 'Sequência de exercícios para fortalecer os músculos com o uso de pesos.' },
     ],
   },
   {
@@ -50,8 +50,8 @@ const modulos = [
       treinoMental: 'Aplicar a Teoria das Ondas (Gratidão Antecipada) durante os treinos, repetindo e sentindo como se a meta já estivesse cumprida: "Deus, obrigado por me fazer mais magro, saudável e atingir meus objetivos." Introduzir meditações diárias com a frequência da abundância (888 Hz).'
     },
     aulas: [
-      { id: 9, titulo: 'Liberação miofascial', tipo: 'Recuperação', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Técnicas para aliviar tensões e acelerar a recuperação muscular.' },
-      { id: 10, titulo: 'Alongamento profundo', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Sequência para ganhar elasticidade e reduzir dores após o treino.' },
+      { id: 9, titulo: 'Cura pela natureza - fase 3', tipo: 'Recuperação', videoUrl: 'https://www.youtube.com/embed/SKgqxhchYt0?si=5RYs1fSBsLLYDYOl', texto: 'Técnicas para aliviar tensões e acelerar a recuperação muscular.' },
+      { id: 10, titulo: 'Exercícios de fortalecimento de pernas e core', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/Zvk4A-wOVRs?si=2w1c6J6HJswkxVri', texto: 'Sequência para ganhar elasticidade e reduzir dores após o treino.' },
     ],
   },
   {
@@ -66,7 +66,7 @@ const modulos = [
       treinoMental: 'Utilizar áudios de auto-hipnose para visualização profunda de metas e superação de dor/obstáculos. Praticar os 4 Pilares dos Grandes Mestres: Desenhar a visão clara do destino final (Arnold), manter a consistência diária obsessiva (Cristiano Ronaldo), agir com relaxamento sob pressão no estado de fluxo (Usain Bolt) e ativar a fé invisível operativa que move a realidade e elimina o medo do amanhã (Jesus Cristo).'
     },
     aulas: [
-      { id: 11, titulo: 'Meditação guiada', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
+      { id: 11, titulo: 'Mindset de sucesso fase 4', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/EVPFM6yqF4s?si=w9Lg5-B0SBsJhMhi', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
       { id: 12, titulo: 'Rotina diária saudável', tipo: 'Hábitos', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Dicas práticas para criar consistência e manter resultados no longo prazo.' },
     ],
   },
@@ -82,6 +82,14 @@ export default function Dashboard() {
   const moduloDaAulaAtiva = modulos.find((m) => 
     m.aulas.some((aula) => aula.id === aulaAtiva.id)
   );
+
+  // Monta a URL do iframe com parâmetros adicionais sem duplicar `?`
+  const videoSrc = (() => {
+    if (!aulaAtiva || !aulaAtiva.videoUrl) return '';
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const params = `modestbranding=1&rel=0&showinfo=0&origin=${origin}`;
+    return aulaAtiva.videoUrl.includes('?') ? `${aulaAtiva.videoUrl}&${params}` : `${aulaAtiva.videoUrl}?${params}`;
+  })();
 
   return (
     <div className="min-h-screen bg-[#051933] text-white">
@@ -208,7 +216,7 @@ export default function Dashboard() {
               <div className="relative aspect-video bg-black rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                 <iframe
                   className="w-full h-full"
-                  src={`${aulaAtiva.videoUrl}?modestbranding=1&rel=0&showinfo=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                  src={videoSrc}
                   title={aulaAtiva.titulo}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
