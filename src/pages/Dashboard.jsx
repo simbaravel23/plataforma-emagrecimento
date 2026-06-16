@@ -14,12 +14,12 @@ const modulos = [
       treinoMental: 'Dedicar os primeiros 5 minutos da manhã para oração e reprogramação subconsciente com mantras primitivos repetidos mentalmente: "Eu sou forte, eu sou capaz. Eu sou magro, eu sou saudável!" e "Eu estou cada vez mais magro e saudável, independente das circunstâncias."'
     },
     aulas: [
-      { id: 1, titulo: 'Explicação e Introdução', tipo: 'Introdução', videoUrl: 'https://www.youtube.com/embed/l4BbL176NEA', texto: 'Conheça a estrutura do programa e como tirar o máximo proveito das aulas.' },
-      { id: 2, titulo: 'Alongamento com Treino Mental', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/17k8IZC_YNI', texto: 'Rotina leve para preparar o corpo e a mente antes dos treinos mais intensos.' },
-      { id: 3, titulo: 'Flexão e Prancha sem Apoio', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/slmWjDCdZRE', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
+      { id: 1, titulo: 'Explicação e Introdução', tipo: 'Introdução', videoUrl: 'https://www.youtube.com/embed/PyX99jpdh2o', texto: 'Conheça a estrutura do programa e como tirar o máximo proveito das aulas.' },
+      { id: 2, titulo: 'Alongamento com Treino Mental', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Rotina leve para preparar o corpo e a mente antes dos treinos mais intensos.' },
+      { id: 3, titulo: 'Flexão e Prancha sem Apoio', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/YwCf0E9HvzQ', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
       { id: 4, titulo: 'Flexão de Braço com Apoio e Prancha', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/QhS_RKCh03g', texto: 'Versão adaptada do exercício para ganho de estabilidade e força controlada.' },
-      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/bU3ArMzuJIU', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
-      { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/ONzgHRuVzX4?si=xTZUnzFUFLs2UOFK', texto: 'Treino de cardio com socos.' },
+      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/2YGAkWZaNrI?si=1zzsvyk0OtUG5gVX', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
+      { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/KdClCJVFNOc?si=Vs1boCzu3FAdQqkp', texto: 'Treino de cardio com socos.' },
     ],
   },
   {
