@@ -21,6 +21,13 @@ export default function Auth() {
     setIsLogin(mode !== 'register');
   }, [searchParams]);
 
+  useEffect(() => {
+    const prefillEmail = searchParams.get('email');
+    if (prefillEmail) {
+      setFormData((prev) => ({ ...prev, email: prefillEmail }));
+    }
+  }, [searchParams]);
+
   // Função para lidar com o envio dos dados para o MongoDB via API
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,6 +88,7 @@ export default function Auth() {
                   required
                   className="w-full bg-[#051933] border-2 border-white/10 p-4 rounded-xl text-white outline-none focus:border-white transition-all placeholder:text-white/20"
                   placeholder="Seu nome"
+                  value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
@@ -93,6 +101,7 @@ export default function Auth() {
                 required
                 className="w-full bg-[#051933] border-2 border-white/10 p-4 rounded-xl text-white outline-none focus:border-white transition-all placeholder:text-white/20"
                 placeholder="exemplo@email.com"
+                value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
             </div>
@@ -104,6 +113,7 @@ export default function Auth() {
                 required
                 className="w-full bg-[#051933] border-2 border-white/10 p-4 rounded-xl text-white outline-none focus:border-white transition-all placeholder:text-white/20"
                 placeholder="••••••••"
+                value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
             </div>

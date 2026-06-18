@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
 const categorias = [
@@ -20,6 +21,8 @@ const categorias = [
 ];
 
 export default function Home() {
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-[#051933] text-white selection:bg-white selection:text-black overflow-x-hidden">
       <Header />
@@ -73,8 +76,14 @@ export default function Home() {
                 type="email" 
                 placeholder="Seu melhor e-mail" 
                 className="bg-transparent px-5 py-2 w-full text-white text-sm outline-none placeholder:text-white/40"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="bg-white text-[#051933] px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-tighter hover:bg-gray-200 transition-all whitespace-nowrap">
+              <button
+                onClick={() => navigate(`/auth?mode=register&email=${encodeURIComponent(email)}`)}
+                disabled={!email}
+                className="bg-white text-[#051933] px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-tighter hover:bg-gray-200 transition-all whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 COMEÇAR
               </button>
             </div>
