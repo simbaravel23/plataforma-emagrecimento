@@ -8,17 +8,17 @@ const modulos = [
     descricao: 'Primeiros passos e rotina de aquecimento.',
     // Conteúdo da Fase 1 inserido aqui
     explicacaoFase: {
-      objetivo: 'Quebrar a inércia, vencer as crenças limitantes iniciais e construir o hábito da constância microscópica (fazer o mínimo é infinitamente melhor do que não fazer nada).',
-      alimentacao: 'Eliminar completamente alimentos embutidos e doces. Encerrar a última refeição (jantar) impreterivelmente até as 19h.',
-      treinoFisico: 'Circuito diário simples focado em criar regularidade e proteger a coluna: Alongamento estruturado + 5 a 10 repetições de Flexão de braço + 10 a 20 segundos de Prancha isométrica + 300 golpes/socos (no ar ou em aparelho).',
-      treinoMental: 'Dedicar os primeiros 5 minutos da manhã para oração e reprogramação subconsciente com mantras primitivos repetidos mentalmente: "Eu sou forte, eu sou capaz. Eu sou magro, eu sou saudável!" e "Eu estou cada vez mais magro e saudável, independente das circunstâncias."'
+      objetivo: 'Quebrar a inércia, vencer crenças limitantes e construir o hábito da constância microscópica — fazer o mínimo é melhor do que não fazer nada.',
+      alimentacao: 'Eliminar alimentos industrializados e doces. Fazer a última refeição (jantar) até, no máximo, às 19h.',
+      treinoFisico: 'Circuito diário simples para criar regularidade e proteger a coluna: alongamento + 5–10 flexões + 10–20 segundos de prancha + 300 golpes/socos (no ar ou em aparelho).',
+      treinoMental: 'Dedicar os primeiros 5 minutos da manhã para oração e reprogramação mental com mantras curtos: "Eu sou forte, eu sou capaz. Eu sou magro, eu sou saudável."'
     },
     aulas: [
       { id: 1, titulo: 'Explicação e Introdução', tipo: 'Introdução', videoUrl: 'https://www.youtube.com/embed/PyX99jpdh2o', texto: 'Conheça a estrutura do programa e como tirar o máximo proveito das aulas.' },
       { id: 2, titulo: 'Alongamento com Treino Mental', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Rotina leve para preparar o corpo e a mente antes dos treinos mais intensos.' },
       { id: 3, titulo: 'Flexão e Prancha sem Apoio', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/YwCf0E9HvzQ', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
       { id: 4, titulo: 'Flexão de Braço com Apoio e Prancha', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/QhS_RKCh03g', texto: 'Versão adaptada do exercício para ganho de estabilidade e força controlada.' },
-      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://youtube.com/shorts/2YGAkWZaNrI?si=u_Y0JZAT2Mj7C4Yu', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
+      { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/2YGAkWZaNrI', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
       { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/KdClCJVFNOc', texto: 'Treino de cardio com socos.' },
     ],
   },
@@ -28,10 +28,10 @@ const modulos = [
     descricao: 'Aulas de treino localizadas para força e resistência.',
     // Conteúdo da Fase 2 inserido aqui
     explicacaoFase: {
-      objetivo: 'Potencializar a queima calórica basal e utilizar frequências sonoras puras para blindar a mente e reduzir o cortisol (hormônio do estresse).',
-      alimentacao: 'Manter a meta de jantar até as 19h e dar um passo além: retirar o café da manhã. Pela manhã, consumir exclusivamente água e café puro sem açúcar para se adaptar ao jejum matinal consciente.',
-      treinoFisico: 'Aumentar a meta calistênica: 10 a 20 flexões + 20 a 30 segundos de prancha + 600 socos diários. Adicionar pesos (halteres ou garrafas pet com água/areia): Fazer 3 séries de 15 repetições de Rosca direta, Elevação lateral, Remada, Agachamento, Panturrilha e Stiff (treinar com peso de 2 a 3 vezes por semana ou dia sim, dia não).',
-      treinoMental: 'Uso obrigatório de fones de ouvido: Utilizar geradores de tom puro online ou aplicativos para ouvir as frequências de 432 Hz (equilíbrio), 741 Hz (limpeza mental) e a combinação binaural regenerativa de 528 Hz no ouvido esquerdo e 522 Hz no ouvido direito (diferencial de 6 Hz - Ondas Theta) durante o alongamento ou jejum matinal.'
+      objetivo: 'Aumentar o gasto calórico basal e utilizar estímulos sonoros para reduzir o estresse e melhorar o foco.',
+      alimentacao: 'Manter o jantar até às 19h. Opcionalmente experimentar jejum matinal: pela manhã consumir água e café sem açúcar para adaptar-se ao jejum.',
+      treinoFisico: 'Elevar a meta calistênica: 10–20 flexões + 20–30 segundos de prancha + 600 socos diários. Incluir exercícios com pesos 2–3 vezes por semana: 3 séries de 15 repetições (rosca direta, elevação lateral, remada, agachamento, stiff).',
+      treinoMental: 'Usar fones de ouvido para ouvir tons ou aplicativos com frequências como 432 Hz e 741 Hz; combinações binaurais podem ser usadas durante alongamento ou jejum matinal.'
     },
     aulas: [
       { id: 7, titulo: 'Explicacao fase 2', tipo: 'Exercícios', videoUrl: 'https://www.youtube-nocookie.com/embed/4kLX6DLsTrg?si=G9wDONHdzvveI_4N', texto: 'Orientacoes sobre as mudancas na fase 2.' },
@@ -44,10 +44,10 @@ const modulos = [
     descricao: 'Rotinas para recuperação activa e relaxamento.',
     // Conteúdo da Fase 3 inserido aqui
     explicacaoFase: {
-      objetivo: 'Romper o platô biológico (estagnação de resultados) através da ativação metabólica com elixires naturais e treinos físicos intensificados.',
-      alimentacao: 'Manter o jejum matinal e o jantar até as 19h. Protocolo de Elixires e Shots Matinais: Beber todas as manhãs em jejum uma pitada de sal integral com água (repõe eletrólitos) + limão espremido na hora + canela em pó. Consumir também água de cravo-da-índia (deixada de molho de um dia para o outro). Infusão Noturna: Em dias específicos, tomar um chá relaxante e imunomodulador de alho, camomila e cravo antes de dormir.',
-      treinoFisico: 'Subir o nível calistênico: 30 flexões de braço + 40 segundos de prancha isométrica (sem errar nenhum dia) + 800 a 1000 socos por sessão. Manter as séries de musculação e adicionar de 1 a 2 vezes por semana foco em membros inferiores e core: Elevação pélvica com peso, abertura de perna deitado e elevação lateral de pernas.',
-      treinoMental: 'Aplicar a Teoria das Ondas (Gratidão Antecipada) durante os treinos, repetindo e sentindo como se a meta já estivesse cumprida: "Deus, obrigado por me fazer mais magro, saudável e atingir meus objetivos." Introduzir meditações diárias com a frequência da abundância (888 Hz).'
+      objetivo: 'Romper o platô biológico por meio da ativação metabólica, rotinas naturais e treinos intensificados.',
+      alimentacao: 'Manter o jejum matinal e jantar até às 19h. Protocolo matinal opcional: água com limão, pitada de sal integral e canela. Pode-se usar água de cravo-da-índia ocasionalmente.',
+      treinoFisico: 'Aumentar a intensidade: 30 flexões + 40 segundos de prancha + 800–1000 socos por sessão. Manter musculação e, 1–2 vezes por semana, focar em membros inferiores e core (elevação pélvica com peso, abdução de pernas, elevação lateral de pernas).',
+      treinoMental: 'Praticar gratidão antecipada e meditações diárias; utilizar áudios de relaxamento ou frequências que ajudem na concentração.'
     },
     aulas: [
       { id: 9, titulo: 'Cura pela natureza - fase 3', tipo: 'Recuperação', videoUrl: 'https://www.youtube.com/embed/SKgqxhchYt0?si=5RYs1fSBsLLYDYOl', texto: 'Técnicas para aliviar tensões e acelerar a recuperação muscular.' },
@@ -60,10 +60,10 @@ const modulos = [
     descricao: 'Meditações e hábitos para sustentar sua transformação.',
     // Conteúdo da Fase 4 inserido aqui
     explicacaoFase: {
-      objetivo: 'Alcançar a máxima performance física e mental, derretendo a gordura aparente através de um protocolo radical e modelagem comportamental de elite.',
-      alimentacao: 'Abandono radical e total de açúcar, farinha branca e fast-food. Introdução em dias específicos de um jejum avançado de 23 horas (fazer apenas uma refeição estrita no dia) associado ao consumo do shot de babosa purificada (livre de aloína) com alho e gengibre.',
-      treinoFisico: 'Atingir o topo da performance individual: 40 flexões de braço + 50 segundos de prancha isométrica + 1000 socos integrados. Manter la musculação pesada e os treinos de perna/core de 2 a 3 vezes na semana (3 séries de 20 repetições).',
-      treinoMental: 'Utilizar áudios de auto-hipnose para visualização profunda de metas e superação de dor/obstáculos. Praticar os 4 Pilares dos Grandes Mestres: Desenhar a visão clara do destino final (Arnold), manter a consistência diária obsessiva (Cristiano Ronaldo), agir com relaxamento sob pressão no estado de fluxo (Usain Bolt) e ativar a fé invisível operativa que move a realidade e elimina o medo do amanhã (Jesus Cristo).'
+      objetivo: 'Desenvolver mentalidade e hábitos para sustentar a transformação física e mental.',
+      alimentacao: 'Eliminar açúcar refinado, farinha branca e fast-food. Em dias específicos, pode-se testar protocolos alimentares mais restritos, sempre com cuidado e acompanhamento.',
+      treinoFisico: 'Buscar alta performance: 40 flexões + 50 segundos de prancha + 1000 socos integrados. Manter musculação pesada e treinos de perna/core 2–3 vezes por semana (3 séries de 20 repetições).',
+      treinoMental: 'Usar áudios de auto-hipnose e visualização para reforçar metas. Praticar pilares como visão clara, consistência, calma sob pressão e crença positiva.'
     },
     aulas: [
       { id: 11, titulo: 'Mindset de sucesso fase 4', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/EVPFM6yqF4s?si=w9Lg5-B0SBsJhMhi', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
