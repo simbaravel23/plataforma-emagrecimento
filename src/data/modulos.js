@@ -12,8 +12,7 @@ const modulos = [
     aulas: [
       { id: 1, titulo: 'Explicação e Introdução', tipo: 'Introdução', videoUrl: 'https://www.youtube.com/embed/PyX99jpdh2o', texto: 'Conheça a estrutura do programa e como tirar o máximo proveito das aulas.' },
       { id: 2, titulo: 'Alongamento com Treino Mental', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Rotina leve para preparar o corpo e a mente antes dos treinos mais intensos.' },
-      { id: 3, titulo: 'Flexão e Prancha sem Apoio', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/YwCf0E9HvzQ', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
-      { id: 4, titulo: 'Flexão de Braço com Apoio e Prancha', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/QhS_RKCh03g', texto: 'Versão adaptada do exercício para ganho de estabilidade e força controlada.' },
+      { id: 3, titulo: 'Flexão e Prancha ', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/YwCf0E9HvzQ', texto: 'Exercício de força focado no core e membros superiores sem apoios adicionais.' },
       { id: 5, titulo: 'Exercícios de Socos no Aparelho', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/2YGAkWZaNrI', texto: 'Treino de braços e agilidade utilizando o aparelho para absorção de impacto.' },
       { id: 6, titulo: 'Exercícios de Socos no Ar', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/KdClCJVFNOc', texto: 'Treino de cardio com socos.' },
     ],
@@ -66,7 +65,6 @@ const modulos = [
     },
     aulas: [
       { id: 11, titulo: 'Mindset de sucesso fase 4', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/EVPFM6yqF4s?si=w9Lg5-B0SBsJhMhi', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
-      { id: 12, titulo: 'Rotina diária saudável', tipo: 'Hábitos', videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U', texto: 'Dicas práticas para criar consistência e manter resultados no longo prazo.' },
       { id: 18, titulo: 'Treino adicional (vídeo)', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
       { id: 20, titulo: 'Alongamento com treino mental e frequências', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Alongamento combinado com treino mental e frequências sonoras.' },
     ],
