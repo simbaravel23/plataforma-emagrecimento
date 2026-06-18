@@ -65,7 +65,7 @@ const modulos = [
     },
     aulas: [
       { id: 11, titulo: 'Mindset de sucesso fase 4', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/EVPFM6yqF4s?si=w9Lg5-B0SBsJhMhi', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
-      { id: 18, titulo: 'Treino adicional (vídeo)', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
+      { id: 18, titulo: 'Treino de socos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
       { id: 20, titulo: 'Alongamento com treino mental e frequências', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Alongamento combinado com treino mental e frequências sonoras.' },
       { id: 17, titulo: 'Treino de socos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
     ],
