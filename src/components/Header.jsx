@@ -20,7 +20,7 @@ export default function Header() {
   </Link>
 
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
+              <Link to="/aulas" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Aulas
               </Link>
               <Link to="/payment" className="text-gray-300 hover:text-white text-sm font-medium transition">
