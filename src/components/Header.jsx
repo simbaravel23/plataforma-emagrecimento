@@ -26,7 +26,7 @@ export default function Header() {
               <Link to="/payment" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Planos
               </Link>
-              <Link to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
+              <Link to="/dicas" className="text-gray-300 hover:text-white text-sm font-medium transition">
                 Dicas
               </Link>
             </nav>

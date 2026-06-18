@@ -4,6 +4,7 @@ import Aula from './pages/Aula';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Payment from './pages/Payment';
+import Dicas from './pages/Dicas';
 import RequireAuth from './components/RequireAuth';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           }
         />
         <Route path="/aula/:id" element={<Aula />} />
+        <Route path="/dicas" element={<Dicas />} />
       </Routes>
     </BrowserRouter>
   );
