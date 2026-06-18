@@ -31,11 +31,13 @@ const modulos = [
       objetivo: 'Aumentar o gasto calórico basal e utilizar estímulos sonoros para reduzir o estresse e melhorar o foco.',
       alimentacao: 'Manter o jantar até às 19h. Opcionalmente experimentar jejum matinal: pela manhã consumir água e café sem açúcar para adaptar-se ao jejum.',
       treinoFisico: 'Elevar a meta calistênica: 10–20 flexões + 20–30 segundos de prancha + 600 socos diários. Incluir exercícios com pesos 2–3 vezes por semana: 3 séries de 15 repetições (rosca direta, elevação lateral, remada, agachamento, stiff).',
-      treinoMental: 'Usar fones de ouvido para ouvir tons ou aplicativos com frequências como 432 Hz e 741 Hz; combinações binaurais podem ser usadas durante alongamento ou jejum matinal.'
+      treinoMental: 'Usar fones de ouvido para ouvir tons ou aplicativos com frequências como 432 Hz e 741 Hz; combinações binaurais podem ser usadas durante alongamento ou jejum matinal. Vídeo de alongamento com treino mental e frequências sonoras: https://www.youtube.com/shorts/6-v6moKFIqs.'
     },
     aulas: [
       { id: 7, titulo: 'Explicacao fase 2', tipo: 'Exercícios', videoUrl: 'https://www.youtube-nocookie.com/embed/4kLX6DLsTrg?si=G9wDONHdzvveI_4N', texto: 'Orientacoes sobre as mudancas na fase 2.' },
       { id: 8, titulo: 'Exercicios adicionais com pesos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/7OmUIRnACZU?si=xWkpq--uDXqtSOez', texto: 'Sequência de exercícios para fortalecer os músculos com o uso de pesos.' },
+      { id: 13, titulo: 'Alongamento com treino mental e frequências', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/shorts/6-v6moKFIqs', texto: 'Alongamento combinado com treino mental e frequências sonoras.' },
+      { id: 14, titulo: 'Treino de socos - fase 2', tipo: 'Bem-estar', videoUrl: 'https://www.youtube.com/embed/AbT6QE5qraY?si=DnHQGvXPp6Rq5fts', texto: 'Treino de socos para resistência, técnica e condicionamento.' },
     ],
   },
   {
@@ -52,6 +54,7 @@ const modulos = [
     aulas: [
       { id: 9, titulo: 'Cura pela natureza - fase 3', tipo: 'Recuperação', videoUrl: 'https://www.youtube.com/embed/SKgqxhchYt0?si=5RYs1fSBsLLYDYOl', texto: 'Técnicas para aliviar tensões e acelerar a recuperação muscular.' },
       { id: 10, titulo: 'Exercícios de fortalecimento de pernas e core', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/Zvk4A-wOVRs?si=2w1c6J6HJswkxVri', texto: 'Sequência para ganhar elasticidade e reduzir dores após o treino.' },
+      { id: 15, titulo: 'Treino com pesos — mais repetições', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/bKApydbVBd0?si=dgGNtwRpMekYptrq', texto: 'Treino com pesos com foco em maior volume e repetições.' },
     ],
   },
   {
