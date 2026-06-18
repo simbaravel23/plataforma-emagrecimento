@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -35,12 +35,8 @@ export default function Header() {
           {/* Lado Direito: Busca e Acesso */}
           <div className="flex items-center gap-6">
             <div className="hidden lg:block relative">
-              <input 
-                type="text" 
-                placeholder="Por onde quer começar ?" 
-                className="bg-[#041224] border border-[#167abc]/50 text-sm text-white px-4 py-2 rounded-md w-64 focus:outline-none focus:border-blue-400"
-              />
-            </div>
+                <SearchBox />
+              </div>
             
        <div className="flex items-center gap-2 sm:gap-4"> {/* Container para controlar o espaçamento entre eles */}
   <Link 
@@ -64,3 +60,33 @@ export default function Header() {
     </header>
   );
 }
+
+  function SearchBox() {
+    const [q, setQ] = useState('');
+    const navigate = useNavigate();
+
+    const submit = () => {
+      const query = q.trim();
+      if (!query) return;
+      navigate(`/aulas?query=${encodeURIComponent(query)}`);
+    };
+
+    return (
+      <div className="relative">
+        <input
+          type="text"
+          placeholder="Por onde quer começar ?"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter') submit(); }}
+          className="bg-[#041224] border border-[#167abc]/50 text-sm text-white px-4 py-2 rounded-md w-64 focus:outline-none focus:border-blue-400"
+        />
+        <button
+          onClick={submit}
+          className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#167abc] px-3 py-1.5 rounded text-white text-xs font-bold hover:bg-[#1a8cd8]"
+        >
+          Ir
+        </button>
+      </div>
+    );
+  }
