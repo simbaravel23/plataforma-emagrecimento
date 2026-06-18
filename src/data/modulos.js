@@ -67,7 +67,9 @@ const modulos = [
       { id: 11, titulo: 'Mindset de sucesso fase 4', tipo: 'Mindset', videoUrl: 'https://www.youtube.com/embed/EVPFM6yqF4s?si=w9Lg5-B0SBsJhMhi', texto: 'Aprenda um exercício simples para acalmar a mente antes e depois do treino.' },
       { id: 18, titulo: 'Treino de socos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
       { id: 20, titulo: 'Alongamento com treino mental e frequências', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/6-v6moKFIqs', texto: 'Alongamento combinado com treino mental e frequências sonoras.' },
-      { id: 17, titulo: 'Treino de socos', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/pWMgrZxWqVw', texto: 'Treino adicional disponível neste vídeo.' },
+       { id: 15, titulo: 'Treino com pesos — mais repetições', tipo: 'Exercícios', videoUrl: 'https://www.youtube.com/embed/bKApydbVBd0?si=dgGNtwRpMekYptrq', texto: 'Treino com pesos com foco em maior volume e repetições.' },
+       { id: 10, titulo: 'Exercícios de fortalecimento de pernas e core', tipo: 'Alongamento', videoUrl: 'https://www.youtube.com/embed/Zvk4A-wOVRs?si=2w1c6J6HJswkxVri', texto: 'Sequência para ganhar elasticidade e reduzir dores após o treino.' },
+     
     ],
   },
 ];
