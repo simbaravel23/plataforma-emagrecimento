@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import modulos from '../data/modulos';
+import ProtectedYoutube from '../components/ProtectedYoutube';
 
 const todasAulas = modulos.flatMap((modulo) => modulo.aulas);
 
 export default function Dashboard() {
   const [aulaAtiva, setAulaAtiva] = useState(todasAulas[0]);
   const [moduloAberto, setModuloAberto] = useState(modulos[0].id);
+  const [selectedModuloMobile, setSelectedModuloMobile] = useState(modulos[0].id);
+  const [selectedAulaMobileId, setSelectedAulaMobileId] = useState(todasAulas[0].id);
 
   // Encontra o módulo ao qual a aula ativa pertence
   const moduloDaAulaAtiva = modulos.find((m) => 
@@ -26,7 +29,49 @@ export default function Dashboard() {
       <Header />
 
       <div className="flex flex-col lg:flex-row pt-24 min-h-screen">
-        <aside className="w-full lg:w-96 bg-[#041224] border-r border-white/10 p-6 overflow-y-auto">
+        {/* Mobile controls: module + aula selects */}
+        <div className="lg:hidden w-full p-4">
+          <div className="bg-[#041224] rounded-2xl p-4 border border-white/10 space-y-3">
+            <label className="text-xs text-white/70">Fase</label>
+            <select
+              className="w-full bg-black/60 rounded px-3 py-2 text-white"
+              value={selectedModuloMobile}
+              onChange={(e) => {
+                const id = Number(e.target.value);
+                setSelectedModuloMobile(id);
+                const mod = modulos.find((m) => m.id === id);
+                const primeira = mod?.aulas?.[0];
+                if (primeira) {
+                  setSelectedAulaMobileId(primeira.id);
+                  setAulaAtiva(primeira);
+                }
+              }}
+            >
+              {modulos.map((m) => (
+                <option key={m.id} value={m.id}>{m.titulo}</option>
+              ))}
+            </select>
+
+            <label className="text-xs text-white/70">Aula</label>
+            <select
+              className="w-full bg-black/60 rounded px-3 py-2 text-white"
+              value={selectedAulaMobileId}
+              onChange={(e) => {
+                const id = Number(e.target.value);
+                setSelectedAulaMobileId(id);
+                const aula = todasAulas.find((a) => a.id === id);
+                if (aula) setAulaAtiva(aula);
+              }}
+            >
+              {modulos
+                .find((m) => m.id === selectedModuloMobile)
+                ?.aulas.map((a) => (
+                  <option key={a.id} value={a.id}>{a.titulo}</option>
+                ))}
+            </select>
+          </div>
+        </div>
+        <aside className="hidden lg:block w-full lg:w-96 bg-[#041224] border-r border-white/10 p-6 overflow-y-auto">
           <div className="mb-10">
             <h2 className="text-2xl font-black uppercase tracking-[0.35em] text-white mb-2">Aulas</h2>
             <p className="text-sm text-white/70">Escolha um módulo e selecione a aula para começar.</p>
@@ -143,15 +188,8 @@ export default function Dashboard() {
 
             {/* PLAYER DE VÍDEO E DICAS */}
             <div className="grid gap-8">
-              <div className="relative aspect-video bg-black rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-                <iframe
-                  className="w-full h-full"
-                  src={videoSrc}
-                  title={aulaAtiva.titulo}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+              <div className="relative">
+                <ProtectedYoutube srcUrl={aulaAtiva.videoUrl} title={aulaAtiva.titulo} />
               </div>
 
               <div className="bg-[#041224] rounded-[2rem] border border-white/10 p-8">
