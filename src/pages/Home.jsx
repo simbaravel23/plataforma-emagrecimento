@@ -91,7 +91,7 @@ export default function Home() {
           {/* Botão para comprar o livro */}
           <div className="mt-6">
             <a
-              href="https://regenerar-livro.onrender.com/"
+              href="https://loja.uiclap.com/titulo/ua181465"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-transparent border border-white/20 text-white px-6 py-3 rounded-full font-black uppercase hover:bg-white/10 transition"
