@@ -174,7 +174,7 @@ export default function Home() {
               <div className="h-48 rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/50 transition-all duration-500 shadow-lg">
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                  src="https://www.youtube.com/embed/S2ch6ZcpnOQ" 
                   title="Depoimento 2"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
